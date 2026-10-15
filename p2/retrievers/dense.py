@@ -1,25 +1,45 @@
-"""Your dense retriever (stage 1): embed every chunk once, embed the query, and rank chunks by cosine similarity.
+"""Dense retrieval: embed every chunk once, embed the query, and rank chunks by cosine similarity.
 
-This file is yours to write, and the system is called "dense" because the file is dense.py.
-Until you write it, build() raises NotImplementedError, and p2 skips the system and lists it as to do.
+Ported from the 12 lab's retrieve.py (dense_rankings), with two changes:
+- it scores chunks (the [chunking] settings of p2.toml), not whole documents, and ChunkScorer lifts
+  them to documents by each document's best chunk;
+- the chunk vectors are cached per text in .cache/vectors/ by p2/embed.py, so only new or changed
+  chunks are encoded again.
 
-Where the idea is:
-- the 12 lab's retrieve.py in the course repo (class/12-embeddings-and-retrieval/lab/starter/retrieve.py):
-  load_bge, cached_doc_vectors and dense_rankings embed the articles and rank them with one matrix product;
-- p2/embed.py has those pieces ready for chunks: embed.load(embed.BGE) loads bge-small-en-v1.5,
-  embed.doc_vectors(model, texts, cfg.root) encodes and caches the chunk vectors, and
-  model.encode([query]) gives the query vector;
-- p2/retrievers/bm25.py shows the shape p2 expects: a class built on ChunkScorer whose
-  score_chunks(text) returns one score per chunk in self.chunks, and ChunkScorer then gives you both
-  search (documents) and search_chunks (chunks, which `p2 answer` needs).
+Every vector has length 1, so for query vector q and chunk vector c the score is
+    cos(q, c) = q . c
+and one matrix-vector product scores every chunk at once.
 
-Pick the embedder you can defend in DECISIONS.md; bge-small and potion-retrieval-32M are the two the lab measured.
+Settings, all optional, in a [dense] table of p2.toml:
+    model = "BAAI/bge-small-en-v1.5"   the embedder (default bge-small; "minishlab/potion-retrieval-32M" is the lab's other one)
+    query_prefix = ""                  text put before every query, such as bge's search instruction
 """
+
+from __future__ import annotations
+
+import numpy as np
+
+from p2 import embed
+from p2.retrievers import ChunkScorer
 
 NEEDS_CLAUDE = False
 
 
+class Dense(ChunkScorer):
+    def __init__(self, corpus, cfg):
+        super().__init__(corpus, cfg)
+        settings = cfg.table("dense")
+        self.model = settings.get("model", embed.BGE)
+        self.query_prefix = settings.get("query_prefix", "")
+        self.embedder = embed.load(self.model)
+        self.vectors = embed.doc_vectors(self.embedder, [c.text for c in self.chunks], cfg.root)
+
+    def score_chunks(self, text: str) -> np.ndarray:
+        if not len(self.chunks):
+            return np.zeros(0, dtype=np.float32)
+        query = self.embedder.encode([self.query_prefix + text])[0]
+        return self.vectors @ query
+
+
 def build(corpus, cfg):
-    raise NotImplementedError(
-        "dense is not built yet: write p2/retrievers/dense.py (the idea is in the 12 lab's retrieve.py, dense_rankings, and p2/embed.py has the helpers)."
-    )
+    return Dense(corpus, cfg)
