@@ -25,11 +25,11 @@ The minimum detectable difference is the smallest gap this many queries could re
 
 For each of `dense`, `hybrid` and `rerank`, one or two sentences: the embedding model, how documents were chunked, what was fused and how, how many candidates the reranker saw, and anything you changed from the 12 and 13 lab code.
 
-- dense: The embedding model used is bge-small-en-v1.5 seen in lab 12 and documents were chunked by splitting them into 300 word chunks with neighbors sharing 50 words for documents longer than 300 words. The difference from lab 12 is chunks are 300 word windows and each document take its best chunk's score and only new or modified chunks are re-encoded.
+- dense: The embedding model used is bge-small-en-v1.5 seen in lab 12 and documents were chunked by splitting them into 300 word chunks with neighbors sharing 50 words for documents longer than 300 words. The difference from lab 12 is chunks are 300 word windows and each document takes its best chunk's score and only new or modified chunks are re-encoded.
 
-- hybrid: Each query asks bm25 and dense to rank 2,484 documents each, then scores each document with reciprocal rank fusion, then ranks them based on their scores. The difference from lab 13 is each bm25 and dense index is built once per run.
+- hybrid: Each query asks bm25 and dense to rank 2,484 documents each, then scores each document with reciprocal rank fusion, then ranks them based on their scores. The difference from lab 13 is the bm25 and dense indexes are each built once per run.
 
-- rerank: Takes hybrid's top 20 documents and reorders them using Claude (Sonnet). The reranker saw 20 candidates per query with each candidate shown to Claude as its first 600 characters and the difference from lab 13 is using hybrid for the first stage intead of a run file as well as the schema limiting each number from 1 to 20.
+- rerank: Takes hybrid's top 20 documents and reorders them using Claude (Sonnet). The reranker saw 20 candidates per query with each candidate shown to Claude as its first 600 characters and the difference from lab 13 is using hybrid for the first stage instead of a run file as well as the schema limiting each number from 1 to 20.
 
 ### Practice queries (20)
 
@@ -263,7 +263,8 @@ Every trace in traces/ that records a Claude call:
 
 | Trace | System | Spans | Claude calls | Saved | Input tokens | Output tokens | Seconds | Input per span | Output per span | Seconds per span |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| traces/shared-practice-rerank.jsonl | rerank | 20 | 20 | 20 | 183,301 | 2,040 | 56.8 | 9,165 | 102 | 2.8 |
+| traces/shared-practice-rerank.jsonl | rerank | 20 | 20 | 20 | 183,301 | 2,040 | 56.7 | 9,165 | 102 | 2.8 |
+| traces/shared-test-rerank.jsonl | rerank | 40 | 40 | 40 | 355,224 | 4,290 | 111.3 | 8,881 | 107 | 2.8 |
 
 A span is one query of a run, one question of an answers file, or one claim of a judged file. A saved reply costs nothing now, so it counts the tokens and the seconds of the call that made it.
 
@@ -282,8 +283,11 @@ Systems that do not call Claude, from traces/retrieval/ on the machine that last
 | Trace | System | Queries | Seconds | Milliseconds per query |
 | --- | --- | ---: | ---: | ---: |
 | traces/retrieval/shared-practice-bm25.jsonl | bm25 | 20 | 0.04 | 1.9 |
-| traces/retrieval/shared-practice-dense.jsonl | dense | 20 | 0.17 | 8.7 |
-| traces/retrieval/shared-practice-hybrid.jsonl | hybrid | 20 | 0.24 | 12.1 |
+| traces/retrieval/shared-practice-dense.jsonl | dense | 20 | 0.16 | 8.2 |
+| traces/retrieval/shared-practice-hybrid.jsonl | hybrid | 20 | 0.22 | 10.9 |
+| traces/retrieval/shared-test-bm25.jsonl | bm25 | 40 | 0.08 | 1.9 |
+| traces/retrieval/shared-test-dense.jsonl | dense | 40 | 0.32 | 7.9 |
+| traces/retrieval/shared-test-hybrid.jsonl | hybrid | 40 | 0.43 | 10.8 |
 <!-- p2:end stretch-cost -->
 
 ### The grep agent (option 5)
