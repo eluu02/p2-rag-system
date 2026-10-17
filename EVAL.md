@@ -101,7 +101,11 @@ Which differences are distinguishable from zero and which are not?
 What is the minimum detectable difference at 20 queries, and what does that say about any gap smaller than it?
 Which claim from lecture 12 or 13 did your numbers support, and which did they leave open?
 
-TODO: write what the practice-query intervals let you claim.
+- A difference is distinguishable when its 95% interval excludes 0. The distinguishable comparisons consist of the following: rerank minus hybrid on all metrics, rerank minus dense on all metrics, and rerank minus bm25 on MRR@10 and nDCG@10. The nondistinguishable comparisons consist of the following: rerank minus bm25 on Recall@10, dense minus bm25 on all metrics, hybrid minus bm25 on all metrics, and hybrid minus dense on all metrics.
+
+- The MDD at 20 queries ranges from 0.166 (rerank minus hybrid, Recall@10) to 0.415 (dense minus bm25, Recall@10). Smaller gaps have a much lower chance of detection and are invisible to this gold set but not absent. Here, on hybrid minus dense with MRR@10, a gap of .301 has 80% chance of detection, 0.15 has about 28%, 0.10 has about 15%, and 0.05 has about 7%.
+
+- The main supported claim from lab 13 is that reranking only improves on its first stage which is supported in rerank minus hybrid having a gap of +0.329 with an interval of [+0.164, +0.504] and no practice query got worse. The main claim left open from lab 12 is that fusion helps a weaker retriever and hurts a strong retriever since all six hybrid intervals include 0. On 7 paraphrase queries with no interval, hybrid (0.152) fell below the stronger retriever, dense (0.714), but rose above the weaker retriever, bm25 (0.000), on MRR@10. This is consistent with the claim from the lab but left open since no interval excludes 0.
 
 ---
 
