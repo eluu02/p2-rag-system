@@ -112,7 +112,10 @@ Which claim from lecture 12 or 13 did your numbers support, and which did they l
 ## 2. Stage 1 - cited answers on the 12 shared questions
 
 <!-- p2:begin answers -->
-_No answers files yet: run `uv run p2 answer --corpus shared --system NAME`, then `uv run p2 score`._
+| Label | System | Verified (in) | 95% interval | not_found (in) | Declined (out) | 95% interval | Quotes found |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| hybrid | hybrid | 7 of 8 (88%) | [0.529, 0.978] | 1 of 8 (12%) | 4 of 4 (100%) | [0.510, 1.000] | 11 of 11 |
+| rerank | rerank | 8 of 8 (100%) | [0.676, 1.000] | 0 of 8 (0%) | 4 of 4 (100%) | [0.510, 1.000] | 12 of 12 |
 <!-- p2:end answers -->
 
 Which system answered, and why that one?
@@ -122,7 +125,11 @@ Then read three in-corpus answers that `uv run p2 verify` passed.
 For each one, open the cited chunk and say whether the quote really supports the claim next to it.
 The check proves a quote is a real piece of the chunk and cannot prove that it supports the claim, so this reading is the part only you can do.
 
-TODO: write your answer choices and your three-answer audit.
+- For the 12 shared questions, I used rerank since it beat hybrid with an interval excluding 0 on the practice queries. Here, it recovered one chunk that hybrid missed, but since the intervals overlap almost entirely, it is difficult to determine which system is better in this case. The missed question was a06 since document 62.101 wasn't in the top 5. For prompts/answer.txt, no changes were made so both runs used lab 13's prompt and the only difference was the retrieval system. The verified share moved due to a06's retrieval with rerank which verified 8 of 8 against hybrid's 7 of 8. The decline share didn't move since both systems declined all 4 unanswerable questions.
+
+- a01: The quote partially supports the claim since it supports the time frame to contact MSHA but does not include applicable accidents and the mention of death as stated in the claim. The chunk directly supports the claim with the list of accidents in which MSHA must be contacted with the death of an individual as the first item.
+- a02: The quote partially supports the claim since it supports the 80%, but it does not mention methane or the increase in percentage when methane is present. The chunk directly supports the claim by stating that an increase occurs when methane is present by 0.4% for each 0.1% of methane. The support for the claim is just outside of what Claude quoted.
+- a06: The quote partially supports the claim since it does answer the question, but does not support the 8-hour average part. The chunk also partially supports the claim as it answers the question but does not mention an 8-hour average.
 
 ---
 
@@ -267,6 +274,8 @@ Every trace in traces/ that records a Claude call:
 
 | Trace | System | Spans | Claude calls | Saved | Input tokens | Output tokens | Seconds | Input per span | Output per span | Seconds per span |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| traces/answers-hybrid.jsonl | hybrid | 12 | 12 | 0 | 64,240 | 3,202 | 51.1 | 5,353 | 267 | 4.3 |
+| traces/answers-rerank.jsonl | rerank | 12 | 24 | 4 | 179,085 | 4,225 | 96.2 | 14,924 | 352 | 8.0 |
 | traces/shared-practice-rerank.jsonl | rerank | 20 | 20 | 20 | 183,301 | 2,040 | 56.7 | 9,165 | 102 | 2.8 |
 | traces/shared-test-rerank.jsonl | rerank | 40 | 40 | 40 | 355,224 | 4,290 | 111.3 | 8,881 | 107 | 2.8 |
 
@@ -281,6 +290,14 @@ Every pair of systems on the same queries where at least one calls Claude, the o
 | shared practice: hybrid minus rerank | 20 | -0.329 | [-0.504, -0.164] | 9,165 | 2.8 | rerank higher |
 
 The difference is the cheaper system's score minus the dearer one's, with its paired interval; the savings count Claude calls only, so a system that makes none saves all of the other's.
+
+Every two answers files on the same questions, the one with fewer input tokens per question first:
+
+| Cheaper minus dearer | Questions | Passing share difference | 95% interval | Input tokens saved per question | Seconds saved per question | Reading |
+| --- | ---: | ---: | ---: | ---: | ---: | --- |
+| shared: hybrid minus rerank | 12 | -0.083 | [-0.250, +0.000] | 9,570 | 3.8 | not distinguishable |
+
+A question passes when its `p2 verify` line is a PASS: every quote is in a chunk that was retrieved, and the question is declined exactly when it should be.
 
 Systems that do not call Claude, from traces/retrieval/ on the machine that last ran `p2 score` (git ignores that folder, so `p2 check` does not compare this part):
 
