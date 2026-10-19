@@ -26,7 +26,8 @@ Commit this answer before your first `uv run p2 score` on the own corpus.
 Git history then shows that the expectation came first, which is what lets it be wrong in a way that teaches you something.
 If you were surprised later, say so in prompt 4 or in EVAL.md; do not come back and rewrite this one.
 
-TODO: your answer to prompt 1.
+- For stage 2, I chose the Consumer Financial Protection Bureau (CFPB) question and answers pages from the Ask CFPB section. I chose this set of documents as I am also taking an Accounting & Finance course where I discovered financial documents and help pages are generally difficult to navigate and dense which makes it difficult to read or search for specific articles. This document set contains about 673 documents, at an estimated 314,000 tokens which is comfortably within the recommended token and document limit.
+- Between bm25 and dense, dense will likely outperform bm25 due to the lack of identifiers in the corpus and embedding models are largely trained on question and answer pairs so this document set should be close to that training data. Bm25 will likely be the worst of all systems unless the gold set is written using the exact vocabulary seen in a document. Since rerank only reorders the top 20 from hybrid's ranking, it should be the best system based on previous labs and practice runs, but it's possible for rerank to underperform dense since hybrid is fusing a weak system (bm25) with a strong one (dense).
 
 ---
 
@@ -42,6 +43,7 @@ If you rejected the alternative without measuring it, say why that was a fair ca
 Find the fork.
 
 TODO: your answer to prompt 2.
+- Corpus cleanup - Leftover page text: Removed to not interfere with bm25 and embeddings. Removed page last modified, CFPB suffix, and stray search character limits.
 
 ---
 
