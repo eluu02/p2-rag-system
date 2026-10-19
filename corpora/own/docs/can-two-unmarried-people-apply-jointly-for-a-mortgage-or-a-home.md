@@ -1,0 +1,13 @@
+# Can two unmarried people apply jointly for a mortgage or a home equity loan?
+
+Can two unmarried people apply jointly for a mortgage or a home equity loan?
+
+Yes, an unmarried couple can get a joint mortgage loan, but there are a few things you’ll want to consider before applying for a loan.
+
+A creditor or loan originator may not treat married joint applicants differently from unmarried joint applicants based on the existence, absence, or likelihood of a marital relationship.
+
+However, when submitting a joint application for a mortgage or home equity loan as unmarried joint applicants, you may want to consider the following:
+
+Discuss each other's financial status – including income, credit scores, and any other financial debt obligations – to ensure you are both ready to purchase a home.
+Establish a cohabitation agreement that outlines how the property will be divided between you in case of financial disputes down the line.
+Decide how each applicant will contribute to the various costs associated with purchasing a home, including the down payment, closing costs, the monthly mortgage payments, and utilities.

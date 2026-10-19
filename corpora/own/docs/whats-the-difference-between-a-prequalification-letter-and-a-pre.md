@@ -1,0 +1,11 @@
+# What’s the difference between a prequalification letter and a preapproval letter?
+
+What’s the difference between a prequalification letter and a preapproval letter?
+
+Prequalification and preapproval letters both specify how much the lender is willing to lend to you, up to a certain amount and based on certain assumptions. These letters provide useful information about your likelihood of getting a loan but are not guaranteed loan offers.
+
+Lenders use the terms “prequalification” and “preapproval” differently. Some lenders may use the word “prequalification,” while other lenders may call the letter a “preapproval.” Some lenders offer a prequalification letter based on unverified information that you report and will only issue a preapproval letter based on verified information. In connection with a prequalification or preapproval request, some lenders may issue a written commitment letter valid for a certain period of time to extend a loan up to a specified amount subject to limited conditions.
+
+Don’t worry about which word lenders use. Lenders’ processes vary widely, and the words they use don’t tell you much about a particular lender’s process even if it may result in legal differences. Both terms refer to a letter from a lender that says the lender is generally willing to lend to you, up to a certain amount and based on certain assumptions. This letter helps you to make an offer on a home, because it gives the seller confidence that you will be able to get financing to buy the home. It is not a guaranteed loan offer, but it should provide enough information for sellers in your area to take it seriously. The best way to make sure that the letter you have will serve its purpose is to ask a local real estate agent or a housing counselor.
+
+Lenders may check your credit when issuing a prequalification or preapproval letter. Many people wait to get a preapproval letter until they are ready to begin shopping seriously for a home. However, getting preapproved earlier in the process can be a good way to spot potential issues with your credit in time to correct them. In addition, even if you have not submitted a formal loan application, a lender that evaluates your creditworthiness and tells you that you do not qualify for a prequalification or preapproval letter must provide you with an adverse action notice.

@@ -1,0 +1,7 @@
+# How can I enroll in Income-Driven Repayment?
+
+How can I enroll in Income-Driven Repayment?
+
+If you have a federal student loan, you may be able to enroll in an income-driven repayment (IDR) plan online . Borrowers can use the Department of Education’s loan simulator to compare IDR plans and get recommendations that best fit your needs.
+
+Borrowers with loans owned by the Department of Education – Direct Loans and some Federal Family Education Loan Program (FFELP) loans – can apply online. But borrowers with older, commercially-owned FFELP loans need to contact their servicer to enroll. The U.S. Department of Education's online IDR plan enrollment website will tell you what types of loans you have. It is the best place to start if you need to enroll in income-driven repayment plan.

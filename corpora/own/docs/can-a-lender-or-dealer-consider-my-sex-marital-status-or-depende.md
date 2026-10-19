@@ -1,0 +1,24 @@
+# Can a lender or dealer consider my sex, marital status, or dependents when deciding whether to give me an auto loan?
+
+Can a lender or dealer consider my sex, marital status, or dependents when deciding whether to give me an auto loan?
+
+A creditor such as a lender or dealer cannot discriminate on the basis of sex or marital status.
+
+If you are applying for individual credit in your own name, a creditor such as a lender or dealer may not deny you credit on the basis of sex or marital status. If your credit is sufficient to qualify you for your own auto loan, a lender or dealer generally may not require that your spouse co-sign. Generally, a lender or dealer must evaluate married and unmarried applicants by the same standards.
+
+If you are applying for joint credit or credit secured by collateral (like a vehicle), the lender or dealer may not deny you on the basis of sex but may ask if you are married, unmarried, or separated. The lender or dealer may explain that the “unmarried” category includes single, divorced, and widowed persons. A lender or dealer may not treat married joint applicants differently from unmarried joint applicants based on the existence, absence, or likelihood of a marital relationship.
+
+A lender or dealer may consider your marital status as it affects the lender’s ability to reach the property in the event of nonpayment. For example, for auto loans, a lender or dealer could consider whether your spouse has an interest in the property that is being offered as collateral for the loan.
+
+A lender or dealer may request information about your spouse or former spouse only if:
+
+Your spouse or former spouse will be responsible for paying debts on the account
+You are relying on your spouse’s income or former spouse’s income to repay the credit requested
+You are relying on alimony, child support, or separate maintenance payments from a spouse or former spouse to repay the credit requested
+You reside in a “community property” state or you are relying on property located in a “community property” state to repay the credit requested
+
+A creditor such as a lender or dealer may ask about the number and ages of your dependents. A lender or dealer may also ask about dependent-related financial obligations or expenses. However, a lender or dealer may do so only if they ask for this information without regard to sex or marital status, or any other prohibited basis. A lender or dealer cannot ask you about your birth control practices, your intentions concerning having or raising children, or your capability to have children.
+
+Submit a complaint with the CFPB
+
+If you believe a lender has discriminated against you for any reason, you can submit a complaint with the CFPB online or by calling (855) 411-CFPB (2372). You’ll need the dates, amounts, and other details about your complaint before submitting. We’ll provide you a way to monitor the status and progress of your complaint.

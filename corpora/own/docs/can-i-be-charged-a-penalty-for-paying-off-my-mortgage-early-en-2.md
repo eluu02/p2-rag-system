@@ -1,0 +1,9 @@
+# Can I be charged a penalty for paying off my mortgage early?
+
+Can I be charged a penalty for paying off my mortgage early?
+
+Whether you can be charged a penalty for paying off your mortgage early depends on what type of mortgage you have and the specific terms of your mortgage loan.
+
+Some loans have pre-payment penalties during the first years of the loan. These fees may impose substantial costs on homeowners with adjustable rate mortgage loans who want to refinance before their rates increase, and some fixed mortgages have prepayment penalties as well.
+
+Many states have laws that limit the amount or duration of these penalties. Whether your loan carries a prepayment penalty must have been disclosed in your loan documents. Sometimes it is only disclosed in something called the “Addendum to the Note” – look at the Note and anything with “Addendum” in the title.

@@ -1,0 +1,9 @@
+# When does a credit card company decide what interest rate to offer me on a credit card?
+
+When does a credit card company decide what interest rate to offer me on a credit card?
+
+The credit card company may decide which interest rate to charge you based on your application and your credit history.
+
+You may ask the card company what your interest rate will be before applying. However, the card company might not be able to answer until it has your credit information.
+
+Credit card companies typically offer their best rates to customers who have the highest credit scores. If you choose to apply and receive a rate higher than you applied for because of information contained in your credit report, the credit card company is required to provide you the name, address, and telephone number of the credit reporting company that provided the credit report the card company used to make its decision. If the card company used a credit score to make its decision, it also must provide you with the credit score it used as well as information to help you understand the credit score, including the key factors that adversely affected your credit score.

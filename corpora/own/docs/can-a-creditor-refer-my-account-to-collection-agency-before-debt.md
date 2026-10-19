@@ -1,0 +1,9 @@
+# Can a creditor refer my account to a collection agency before my debt is due? Do I have to be told before a debt is turned in to collections?
+
+Can a creditor refer my account to a collection agency before my debt is due? Do I have to be told before a debt is turned in to collections?
+
+While the creditor does not have to tell you before sending your account to a debt collector, usually they will try and collect the debt from you before sending to a collector.
+
+Sometimes collection agencies manage the entire account receivables process for a creditor, so it is possible for your account to be referred to a collector before your debt is due. However, it is rare that you would receive collection calls before a debt is due. If the collection agency is managing the account receivables for a creditor, they may call to advise you of payment terms, due dates, etc., but they should not ask you for early payment. You should receive a statement before you are asked to make a payment. Generally, the creditor does not have to tell you before it sends your debt to a debt collector, but a creditor usually will try to collect the debt from you before sending it to a collector.
+
+With mortgage loans, usually the company servicing your mortgage loan is also the company that will contact you to collect the payment if your loan becomes delinquent. If your mortgage servicer changes, both your old and new servicers must notify you of the transfer. The company transferring the servicing rights must provide you with a notice not less than 15 days before the effective date of the transfer and your new servicer must deliver a transfer notice not more than 15 days after the effective transfer date. If the two notices are combined, then the combined notice must be delivered to you not less than 15 days before the effective transfer date.
