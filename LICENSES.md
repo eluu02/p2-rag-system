@@ -6,8 +6,8 @@ It cannot prove a license, and you remain responsible for every document you com
 
 ## Summary
 
-- Documents: 673
-- ok: 673 (of which 0 had a flag that you reviewed)
+- Documents: 672
+- ok: 672 (of which 0 had a flag that you reviewed)
 - flag, not yet reviewed: 0
 - fail: 0
 - Online lookups: not run (use `--online` on your own machine)
@@ -17,7 +17,6 @@ It cannot prove a license, and you remain responsible for every document you com
 | docid | license | status | why |
 |---|---|---|---|
 | `a-box-on-my-credit-card-bill-says-that-i-will-pay-off-the-balanc` | us-gov-public-domain | ok | - |
-| `a-deposit-was-credited-to-my-account-by-mistake-can-the-bankcred` | us-gov-public-domain | ok | - |
 | `a-financial-planner-offered-to-help-with-my-bill-paying-and-bank` | us-gov-public-domain | ok | - |
 | `a-joint-checking-account-owner-took-all-the-money-out-and-then-c` | us-gov-public-domain | ok | - |
 | `a-person-i-hired-to-help-with-my-mortgage-advised-me-to-stop-mak` | us-gov-public-domain | ok | - |

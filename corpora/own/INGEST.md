@@ -6,9 +6,9 @@ Running ingest again adds to the table and replaces the "last run" section, and 
 
 ## Summary
 
-- Documents: 673 (the final check needs at least 200)
-- Words: 224,867
-- Estimated tokens (words times 1.4): 314,813 (`p2 check` warns above 800,000 and fails above 1,000,000)
+- Documents: 672 (the final check needs at least 200)
+- Words: 224,515
+- Estimated tokens (words times 1.4): 314,321 (`p2 check` warns above 800,000 and fails above 1,000,000)
 - Flagged documents: 10
 
 ## Documents
@@ -16,7 +16,6 @@ Running ingest again adds to the table and replaces the "last run" section, and 
 | docid | words | characters per page | flags | cleaning |
 |---|---:|---:|---|---|
 | `a-box-on-my-credit-card-bill-says-that-i-will-pay-off-the-balanc` | 195 | - | - | - |
-| `a-deposit-was-credited-to-my-account-by-mistake-can-the-bankcred` | 344 | - | - | - |
 | `a-financial-planner-offered-to-help-with-my-bill-paying-and-bank` | 295 | - | - | - |
 | `a-joint-checking-account-owner-took-all-the-money-out-and-then-c` | 73 | - | - | - |
 | `a-person-i-hired-to-help-with-my-mortgage-advised-me-to-stop-mak` | 119 | - | - | - |
