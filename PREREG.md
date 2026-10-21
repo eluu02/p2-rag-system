@@ -24,7 +24,7 @@ One sentence, about your own corpus, naming two of your systems and a direction.
 For example: "On my corpus of Kubernetes documentation, `rerank` has a higher MRR@10 than `hybrid`, because the queries are paraphrases that a first-stage fusion ranks too low."
 It should be something you could be wrong about.
 
-TODO: your hypothesis.
+- On my CFPB corpus, rerank has a higher MRR@10 compared to hybrid, since the corpus contains many near-duplicate questions, the RRF scores are similar which gives hybrid little evidence to distinguish them, while rerank using Claude can separate questions by intent. 
 
 ---
 
@@ -36,7 +36,7 @@ A difference of 0.02 is usually not worth a reranker's cost in time and tokens.
 In this course, choose a Δ of at least 0.15 unless you argue for a larger one, because a smaller gap takes more queries than one project can judge.
 Call your number Δ (delta).
 
-TODO: your metric and your Δ, with the reason.
+- I choose MRR@10 with a delta of 0.15. Since rerank adds time and about 9,000 input tokens per query, a gain smaller than 0.15 wouldn't be noticeable enough to justify the extra wait time. Additionally, on this corpus, a wrong page at rank 1 is often a similar question that looks correct. Fixing this on about 30% of the questions should be noticeable by a user.
 
 ---
 
@@ -65,7 +65,7 @@ After you score the own corpus, the minimum detectable difference that `uv run p
 It should come out at or below your Δ.
 If it does not, your queries varied more than your stage 1 sd suggested, and you will say so in the outcome.
 
-TODO: your sd, which pair it came from, your n, and the number of queries you will write (at least n).
+- My sd is 0.394 coming from rerank versus hybrid on MRR@10 on the 20 shared practice queries. n = ((1.96 + 0.84) × 0.394 / 0.15)² ≈ 54. Rounding up from this, I will write 60 queries.
 
 ---
 
@@ -82,7 +82,7 @@ This is the default rule, and you can tighten it, but do not loosen it after you
 | around zero, with both ends inside plus or minus Δ | well-powered null: a difference as large as Δ is ruled out |
 | around zero, with an end beyond plus or minus Δ | inconclusive: the gold set could not settle it, and I say so |
 
-TODO: confirm or tighten this rule, and name the two systems and the metric once more.
+- I confirm the default rule. The two systems are rerank and hybrid using the metric MRR@10, and positive means rerank outperforms hybrid.
 
 ---
 
