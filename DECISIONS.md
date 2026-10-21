@@ -42,8 +42,11 @@ If you rejected the alternative without measuring it, say why that was a fair ca
 "There was no alternative" is not an answer.
 Find the fork.
 
-TODO: your answer to prompt 2.
-- Corpus cleanup - Leftover page text: Removed to not interfere with bm25 and embeddings. Removed page last modified, CFPB suffix, and stray search character limits.
+- One document (A deposit was credited to my account by mistake. Can the bank/credit union take it back?) exists where the CFPB answer is a single word, "Yes". The options were to remove this document or keep it in the corpus.
+
+- I chose to remove this document so that every document has a real, readable answer. Removing this would also never allow a single "Yes" to be cited as evidence. This leaves the corpus with 672 documents instead of 673. The downside is that one real answer leaves the corpus so a user asking exactly this question would only get related pages. If I had kept this document, relevance would be decided by how close the query is to the title. This would add noise to the gold set and similar queries could be judged differently since closeness is a spectrum while labels are binary.
+
+- The alternative was rejected without measuring since it was only one document out of 673 and it was removed before any query, judgement, or run existed so nothing had to be redone.
 
 ---
 
