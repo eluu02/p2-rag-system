@@ -101,3 +101,5 @@ TODO: your outcome.
 
 Dated entries only, one per change, each saying what changed and why.
 Leave this section as it is if nothing changed.
+
+- Date: 2026-10-24. Changed gold set target from 60 queries to 30, 12 by hand and 18 from Claude, with 10 per class. This was done as 60 queries would entail around 15 hours of reading documents for qrels.txt against the project deadline and no own-corpus run or score existed yet. The minimum detectable difference rises from 0.14 to about 0.20, or 0.21 with the t correction. A true gain of 0.15 is now less likely to be detected. Δ = 0.15, the hypothesis in section 1 and the decision rule in section 4 are unchanged.
