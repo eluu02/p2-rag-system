@@ -2,3 +2,29 @@
 # rel is 1 for a relevant document, unless EVAL.md declares graded labels; every query needs at least one relevant document.
 # 598E: commit your filled-in PREREG.md before the first judgment line goes into this file.
 # Lines that start with # are comments.
+o01 0 what-is-a-fico-score-en-1883 1
+o01 0 where-can-i-get-my-credit-scores-en-316 1
+o01 0 do-i-have-to-pay-for-my-credit-score-en-1265 1
+o02 0 what-is-an-fha-loan-en-112 1
+o02 0 what-is-mortgage-insurance-and-how-does-it-work-en-1953 1
+o03 0 what-is-an-ach-transaction-en-1065 1
+o03 0 can-i-use-the-automated-clearing-house-ach-network-to-transfer-f 1
+o03 0 how-do-i-repay-a-payday-loan-en-1599 1
+o04 0 what-is-a-hud-1-settlement-statement-en-178 1
+o05 0 does-requesting-my-credit-report-hurt-my-credit-score-en-1229 1
+o05 0 does-my-credit-score-affect-my-ability-to-get-a-mortgage-loan-or 1
+o05 0 what-exactly-happens-when-a-mortgage-lender-checks-my-credit-en 1
+o05 0 what-is-a-credit-inquiry-en-1317 1
+o06 0 can-a-debt-collector-contact-me-through-social-media-en-2112 1
+o06 0 what-laws-limit-what-debt-collectors-can-say-or-do-en-329 1
+o06 0 what-is-an-unfair-deceptive-or-abusive-practice-by-a-debt-collec 1
+o07 0 am-i-responsible-for-charges-on-a-joint-credit-card-en-88 1
+o08 0 should-i-trade-in-my-car-if-its-not-paid-off-en-2045 1
+o08 0 what-things-can-i-negotiate-when-shopping-for-a-car-or-auto-loan 1
+o08 0 what-is-a-loan-to-value-ratio-in-an-auto-loan-en-769 1
+o09 0 does-my-history-of-paying-utility-bills-like-telephone-cable-ele 1
+o10 0 my-rate-or-the-fees-changed-between-my-loan-estimate-and-my-clos 1
+o10 0 i-received-a-revised-loan-estimate-from-my-lender-showing-a-high 1
+o10 0 can-my-final-mortgage-costs-increase-from-what-was-on-my-loan-es 1
+o11 0 does-a-heloc-affect-my-ability-to-refinance-my-first-mortgage-lo 1
+o12 0 how-much-do-529-plans-cost-en-2080 1

@@ -10,7 +10,7 @@ o05	paraphrase	Will looking at my credit report have any impact on the score?	ha
 o06	paraphrase	I have a debt, is a collection company allowed to reach out to me via social media?	hand
 o07	paraphrase	Me and a partner share an account on a credit card, who is required to pay it off?	hand
 o08	paraphrase	What options do I have for buying a new car if I still owe money on my current car?	hand
-o09	mixed	Does paying bills like rent or electricity on time increase my credit score?	hand
-o10	mixed	What should I do if my loan estimate rate and closing disclosure fee went up?	hand
+o09	mixed	Does paying bills like electricity on time increase my credit score?	hand
+o10	mixed	Why have my loan estimate rate and closing disclosure fee gone up?	hand
 o11	mixed	Does a HELOC have any impact on my loan if I am replacing my first mortgage?	hand
 o12	mixed	What kind of fees does a 529 plan include?	hand
