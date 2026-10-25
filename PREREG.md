@@ -93,7 +93,9 @@ Which row of the table in section 4 is it?
 Did your gold set reach the size section 3 asked for, and what was the minimum detectable difference that `uv run p2 score` printed?
 What would you do next, and what would you want a reader to take from this?
 
-TODO: your outcome.
+- The paired bootstrap interval, using rerank minus hybrid on MRR@10, has a 95% interval of [+0.011, +0.251] and a mean difference of +0.123. With this interval, the true gain could be well below or well above the delta of 0.15. The interval falls into row 1 in section 4 which is entirely above zero in the direction I predicted. 
+- Section 3 asked for 60 queries which the amendment in section 6 lowers to 30 and the gold set reached the size of 30. The MDD for MRR@10 is 0.177, above the delta of 0.15 due to the amended 30 queries instead of the 60 intended. 
+- Next, I would add more queries to bring the MDD down to delta which was the section 3 target before the amendment. The reader should notice that on this gold set, rerank's MRR@10 is reliably higher than hybrid's since the interval excludes 0, and the gain is concentrated since only 6 of 30 queries changed with 5 up and 1 down, meaning rerank fixes some paraphrase queries that hybrid ranks too low instead of rerank being better everywhere.
 
 ---
 
