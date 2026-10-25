@@ -276,6 +276,7 @@ Did your prediction in `DECISIONS.md` prompt 1 hold?
 Change one thing and keep everything else the same.
 Write your hypothesis here before you run it, in one sentence with a direction: "I expect X to raise MRR@10 on my corpus because Y."
 The run file for it lives in `runs/own/ablation/`.
+- I expect dense with potion to have a lower MRR@10 compared to dense with bge-small on my corpus. Due to the existing ceiling for dense, potion could only improve on paraphrase, and leaves potential for loss on identifier and mixed queries. Since potion averages fixed word vectors, losing the context a reworded question depends on, it will likely drop overall MRR@10.
 
 <!-- p2:begin own-ablation -->
 _No ablation runs yet: `uv run p2 run --corpus own --system NAME --ablation` writes one to runs/own/ablation/, then `uv run p2 score` fills this table._
