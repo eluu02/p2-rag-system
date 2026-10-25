@@ -14,3 +14,21 @@ o09	mixed	Does paying bills like electricity on time increase my credit score?	h
 o10	mixed	Why have my loan estimate rate and closing disclosure fee gone up?	hand
 o11	mixed	Does a HELOC have any impact on my loan if I am replacing my first mortgage?	hand
 o12	mixed	What kind of fees does a 529 plan include?	hand
+o13	identifier	Who qualifies for PSLF?	claude
+o14	identifier	How long does a servicer have to answer a QWR?	claude
+o15	identifier	When does the SCRA apply to National Guard members?	claude
+o16	identifier	PITI	claude
+o17	identifier	What does GAP insurance cover on an auto loan?	claude
+o18	identifier	Do BNPL loans charge late fees?	claude
+o19	paraphrase	Someone took a payment I mailed and deposited it as their own. Can I get my money back?	claude
+o20	paraphrase	If I borrow against my house's value in retirement and the lender pays me, does it become the owner of my house?	claude
+o21	paraphrase	Someone found my missing wallet and went shopping with my card. How much of that do I owe?	claude
+o22	paraphrase	If I stop making house payments, how soon could the lender take my home?	claude
+o23	paraphrase	I sent money to family in another country and the wrong amount arrived. How do I report it?	claude
+o24	paraphrase	How many times in one day can my bank charge me for spending more than I have?	claude
+o25	mixed	What happens to my PACE payments if I sell my house?	claude
+o26	mixed	My mom gave me a POA, but the bank wants its own form instead. Do they have to accept hers?	claude
+o27	mixed	Why is the APR on a short-term cash advance so much higher than the fee I was quoted?	claude
+o28	mixed	Can an IDR plan shrink what I pay each month on my school loans if my salary is low?	claude
+o29	mixed	Can two veterans in the same household use a VA loan to buy a weekend getaway place?	claude
+o30	mixed	How much can my ARM's rate jump each time it resets?	claude

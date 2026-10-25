@@ -141,7 +141,11 @@ What is it, where did it come from, how many documents and how many megabytes, a
 Name the one or two documents you were least sure about and what you decided.
 Say which of the allowed sources in the brief it comes from.
 
-TODO: describe your corpus and its license basis.
+- My corpus is the answer pages of Ask CFPB, the Consumer Financial Protection Bureau's question and answer pages on credit, mortgages, debt collection, bank accounts and similar topics. This comes from the pages listed in consumerfinance.gov's sitemap. The corpus contains 672 documents at 1.6 megabytes. The license basis comes from CFPB's privacy page saying: "Information created by the CFPB is in the public domain and you may reproduce, publish, or otherwise use it without the Bureau's permission.", and is found at https://www.consumerfinance.gov/privacy/website-privacy-policy/.
+
+- The first document I was unsure about was a-deposit-was-credited-to-my-account-by-mistake-can-the-bankcred, which contained one word for its answer. This would add noise to the gold set and relevance would be decided by how close the query is to the title, so I decided to remove this document from the corpus. The second document was do-joint-credit-card-accounts-with-my-spouse-affect-my-credit-sc, which contains 30 words and was flagged by INGEST.md as very short. I decided to keep this document after reading it since it has a complete answer unlike the first document.
+
+- A search of all documents found none of the following search terms: "©", "copyright", "all rights reserved". Ask CFPB answers are the Bureau's own guidance, not reports written by a contractor. This corpus falls under the US federal government works (us-gov-public-domain) category for allowed sources.
 
 ### The gold set
 
@@ -150,7 +154,13 @@ How did you decide that a document is relevant: write your relevance rule in two
 How did you find candidates (the systems' top 10, a keyword search, reading), and did you read every document before you labeled it?
 Your labels are binary (`rel` 1) unless you say otherwise: if you use graded labels, declare the scale here, for example 2 means the document answers the query fully and 1 means it helps.
 
-TODO: describe your gold set and your relevance rule.
+- There are a total of 30 queries, 12 written by hand and 18 written by Claude. There are 10 queries per class for an even split, otherwise MRR@10 would be weighted toward whichever class has the most queries. I used three classes, identifier to test an exact term, paraphrase to test meaning without shared words, and mixed to test a combination of identifier and paraphrase. These match the shared set's classes, making the cross-corpus comparison fair.
+
+- A document is relevant to a query if it answers the question the query asks. A document that only mentions the query's term is not relevant. The answer may be anywhere in the document and the document counts even if its title asks something else as long as some passage answers the query.
+
+- To find candidates, Claude built a pool of documents using bm25 and dense top 10, hybrid's top 20, and keyword search for all queries, as well as the page I wrote the query from only for the handwritten queries. I used several sources since a gold set built from one system's results favors that system. I read the full text if the title shares a word with the query that appears in no more than 2% of titles, or if the document is in dense's top 5, then I read a small excerpt if the key term appears in the text but not in the title and screened the rest from their titles only. Additionally, I opened the full page whenever an excerpt or a screened-out title might answer the query, and every label was decided from the full page.
+
+- My labels are binary since there is no second level to grade, resulting in one boundary to apply instead of two as well as being comparable with the shared corpus. Every line in qrels.txt has rel 1. A document without a line in qrels.txt counts as not relevant.
 
 ---
 
