@@ -263,7 +263,11 @@ Which differences are distinguishable and which are not, at your gold-set size?
 Do the `hand` queries and the `claude` queries tell the same story?
 Did your prediction in `DECISIONS.md` prompt 1 hold?
 
-TODO: write what your own-corpus intervals let you claim.
+- At 30 queries, the MDDs run from 0.057 (rerank minus dense, Recall@10) to 0.213 (rerank minus bm25, MRR@10), for example, hybrid minus dense on MRR@10 is -0.037 with an MDD of 0.145, so a true gap of about 0.14 could go undetected. Every system minus bm25 is distinguishable and beats bm25 on every metric, for example, dense minus bm25 on MRR@10 has interval [+0.051, +0.245] with a mean difference of +0.139. Among dense, hybrid, and rerank, only rerank minus hybrid on MRR@10 is distinguishable, for example, rerank minus hybrid has interval [+0.011, +0.251] with a mean difference of +0.123.
+
+- Every hand minus claude interval includes 0 so no system differs distinguishably. bm25 trails dense in both groups (-0.121 claude, -0.167 hand) and the interval [-0.159, +0.268] with a mean difference of +0.045 isn't distinguishable. This is consistent with the overlap of shared terms from the query to document where hand got a score of 0.70 and claude 0.69. The similar results are likely due to the shared class split and the shared source page method for writing queries. With 12 hand written and 18 claude queries, the unpaired intervals are wide, so a real difference could be hidden.
+
+- My prediction on dense beating bm25 and bm25 being the worst system held but not for the reason of a lack of identifiers since bm25 scored 1.000 on identifier queries and lost on paraphrase (0.425). My prediction on rerank being the best system partially held since the rerank minus dense on MRR@10 interval is [+0.000, +0.182] which is not distinguishable, but was the best in point estimates yet not enough to separate from dense. My hedge prediction that rerank could fall below dense is neither confirmed nor ruled out.
 
 ---
 
