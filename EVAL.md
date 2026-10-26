@@ -479,6 +479,15 @@ _No stretch runs yet (stretch option 5): `uv run p2 run --corpus own --queries e
 ### Your stretch
 
 Write the five things here.
+- Rider
+
+- The rider has two parts, PREREG.md filled in before the first judgment, and repeats where rerank was rerun 3 times on the shared practice queries, and the 12 shared questions answered 3 times, each with its trace in traces/ as well as runs in runs/shared/rerank.practice.r1 to .r3.trec and answers in answers/shared/rerank.r1 to .r3.json.
+
+- Tables p2 score wrote: repeats is the repeats in section 9, own-pairs is the preregistered test in section 4.
+
+- The intervals let me claim rerank's gain over hybrid on the shared practice queries survives run-to-run variation with a range of 0.000 against +0.329 for the repeats, but doesn't let me claim that answer rates are high since true rates can be as low as about 68% and 51%, nor does it cover my own corpus. It also lets me claim rerank minus hybrid with interval +0.123 [+0.011, +0.251] falls in row 1 in section 4 of PREREG.md but doesn't let me claim that the gain reaches Δ or that my near-duplicate mechanism explains it.
+
+- One thing I'd do next is growing the gold set toward the original 60. An MDD at or below 0.15 so the interval can tell whether the gain clears Δ would show it worked.
 
 ---
 
@@ -528,7 +537,11 @@ Each repeat answers the same questions, so the repeats are not independent trial
 Does the reranker's gain over its first stage survive the run-to-run variation?
 Write what the spread is, how it compares with the gain, and what the Wilson intervals on the verified share and the declined share say about 8 and 4 questions.
 
-598E: write the repeats result here.
+- The reranker's gain over its first stage survived. Rerank was rerun 3 times on the 20 shared practice queries with fresh Claude replies where the MRR@10 was 0.800 in every repeat, so the range is 0.000 against a gain of +0.329. Each repeat minus hybrid is +0.329 [+0.164, +0.504], so the gain is distinguishable in every repeat.  
+
+- From comparing the four run files, the three repeats and the original run, 0 of 20 queries had the same top 10 in every run. 17 of 20 queries kept the same rank 1. Since MRR@10 only depends on the rank of the first relevant page and that rank never changed, reorderings below it didn't move the score.
+
+- Every repeat verified 8 of 8 and declined 4 of 4. The Wilson interval for verified is [0.676, 1.000] and declined is [0.510, 1.000]. A perfect score on a few questions still allows a true rate as low as about 68% for verified and 51% for declined since the intervals are wide because n is small. The repeats don't narrow the intervals since they answer the same 12 questions, but adding more questions would.
 
 ### The pre-registered claim
 
@@ -536,4 +549,8 @@ The claim, the smallest effect, the gold-set size and the test are in `PREREG.md
 Here, say whether you followed the plan, what the interval turned out to be, and what that means.
 The outcome section of `PREREG.md` holds the short version.
 
-598E: write the claim and its outcome here.
+- I mostly followed the plan with one deviation. The hypothesis (rerank > hybrid), the metric (MRR@10), Δ = 0.15, and the default decision rule all stayed the same. The deviation is changing the number of queries in the gold set from 60 to 30 through the amendment in PREREG.md section 6. This was done before any own-corpus run or score existed so it couldn't have been influenced by the result. With this change, the MDD rose from about 0.14 to 0.177, above delta.
+
+- The resulting interval for rerank minus hybrid on MRR@10 is +0.123 [+0.011, +0.251]. This interval falls into row 1 of section 4 in PREREG.md (entirely above zero in the predicted direction), whose verdict is supported. The full results can be seen in PREREG.md section 5.
+
+- Since Δ = 0.15 is inside the interval, the gain is distinguishable from zero, but may be smaller than what justifies rerank's cost. In the failure analysis, a relevant page was found with no line in qrels.txt. Correcting this would raise rerank's o28 RR from 0.5 to 1.0, moving the result to about +0.140 which is still in row 1 of section 4 in PREREG.md. I kept the gold set as is since I only looked for errors in rerank's failures and changing judgements after scoring would bias the test toward rerank. Additionally, my hypothesis said rerank wins by separating near-duplicate questions, but the failure analysis found no clear near-duplicate case. The gain is concentrated in 6 of 30 queries (5 up, 1 down), consisting of mostly paraphrases, so this suggests rerank fixes paraphrase queries that hybrid ranks too low.
