@@ -62,7 +62,11 @@ What did you do instead?
 If it genuinely never happened, say so plainly, and then say what you would have had to check in order to notice.
 Being honest here costs you far less than a story you cannot defend when you record your video.
 
-TODO: your answer to prompt 3.
+- A minor situation where I overruled the agent was in queries.tsv. Claude flagged one of its drafted queries (o27: "Why is the APR on a short-term cash advance so much higher than the fee I was quoted?") as ambiguous due to cash advance meaning a payday loan or a credit card cash advance, and offered to reword it and rebuild its pool of documents to tailor to just the payday loan document. 
+
+- After reading both pages, I found that both answer the query as written, so the ambiguity is real but harmless.
+
+- I ended up marking both as relevant so the query stayed as Claude wrote it, and its judgments reflect what the pages answer rather than the query rewritten to fit the page Claude drafted it from. Keeping the query as written was the better choice as rewording after seeing the candidates would tailor the query to a page I had already read.
 
 ---
 
@@ -74,7 +78,11 @@ It could be a mean over a small query class, a difference whose interval include
 What would have to be true for you to trust it?
 Did you do anything to test it, and what did that show?
 
-TODO: your answer to prompt 4.
+- One number I do not trust is rerank's verified 8 of 8 on the shared questions. First, verified doesn't mean supported since p2 verify checks that each quote appears in the cited chunk and not that the quote supports the claim. Second, with only 8 questions, the Wilson interval is [0.676, 1.000], which is consistent with a true verified rate between about 68% and 100%.
+
+- To test this, I read 3 of 8 verified answers (a01, a02, a06), and in all three the quote only partly supported its claim, which showed the support gap. I also ran the 3 repeats in the rider, which showed 8 of 8 every time, so the number is stable, but doesn't fix either problem.
+
+- To trust this number, I would need to check the claims for whether every quote supports its claim as well as more questions to narrow the interval.
 
 ---
 
@@ -85,4 +93,6 @@ One thing in your system, your corpus or your gold set that is not right, not fi
 What would you do next, and how would you find out whether it matters?
 Name the file, the query or the document where someone could look.
 
-TODO: your answer to prompt 5.
+- One thing that is still wrong is the opening 600-character window the reranker sees in p2/retrievers/rerank.py where passage_chars = 600. The failure analysis showed this cost two relevant pages, o06 which was hybrid rank 2 but pushed out of the top 10 by rerank since its first mention of a key term was at character 1,812, and o05 which was hybrid rank 6 and also pushed out of the top 10 since its first mention of a key term was at character 1,126.
+
+- Next, I would send Claude each page's best matching chunk instead of its opening and try it first on o06 and o05, then all 30 if it helps. This would matter if both pages return to the top 10 and on all 30 queries, Recall@10 rises without MRR@10 falling.
